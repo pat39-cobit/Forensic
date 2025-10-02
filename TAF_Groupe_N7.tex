@@ -1,0 +1,383 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{titlepic}
+\usepackage{lmodern}
+
+% Configuration de la page
+\geometry{left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+% Style des titres
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Style de la table des matières
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\begin{document}
+
+% Page de titre
+\begin{titlepage}
+    \centering
+
+\begin{tabular}{p{0.45\linewidth} p{0.45\linewidth}}
+\centering
+\textbf{RÉPUBLIQUE DU CAMEROUN}\\
+******\\
+Paix -- Travail -- Patrie\\
+******\\
+\textbf{UNIVERSITÉ DE YAOUNDÉ I}\\
+******\\
+\textbf {École Nationale Supérieure\\
+Polytechnique de Yaoundé}\\
+******\\
+\textbf {Département de Génie Informatique}\\
+****** &
+\centering
+\textbf{REPUBLIC OF CAMEROON}\\
+******\\
+Peace -- Work -- Fatherland\\
+******\\
+\textbf{UNIVERSITY OF YAOUNDÉ I}\\
+******\\
+\textbf {National Advanced School\\
+Engineering of Yaounde}\\
+******\\
+\textbf {Computers Engineering Department}\\
+****** \\
+\end{tabular}
+\vspace{1 cm}
+
+    \begin{LARGE}
+
+    \textbf{INTRODUCTION AUX TECHNIQUES D'INVESTIGATION NUMERIQUE}
+    \end{LARGE}
+
+    \vspace{1cm}
+
+    \begin{Large}
+    \textbf{THEME: L'UTILITÉ DE L'INVESTIGATION NUMÉRIQUE DANS LA POLICE JUDICIAIRE}
+    \end{Large}
+    
+    \vspace{1cm}
+    
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{1.jpg}
+	\end{figure}
+	
+	
+	
+	\begin{flushleft}
+	\textbf{PAR:}
+	\end{flushleft}
+    \begin{tabular}{|>{\centering\arraybackslash}p{7cm}|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{3cm}|}
+        \hline
+        \textbf{NOMS \& PRENOMS} & \textbf{FILIERE  } & \textbf{MATRICULE} \\
+        \hline
+        TAPA KEMEGNE LOIC BRAYAN & \textbf{HN-CIN-L4} & \textbf{22P108} \\
+        \hline
+        HEYA SALOMON FLORIAN & \textbf{HN-CIN-L4} & \textbf{22P046} \\
+        \hline
+        WANSI GILLES GILDAS & \textbf{HN-CIN-L4} & \textbf{22P037} \\
+        \hline
+    \end{tabular}
+
+    \vspace{1cm}
+	\begin{Large}
+	Sous la supervision de Ing THIERRY MINKA
+	\end{Large}
+    
+    \vspace{1cm}
+	\begin{large}
+	Année Académique 2024/2025
+	\end{large}
+\end{titlepage}
+
+% Table des matières
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\setcounter{page}{1}
+
+\section{Introduction}
+
+\textbf{L'investigation numérique} (ou \emph{digital forensic}) est une discipline qui consiste à \textbf{collecter, analyser, conserver et présenter des preuves numériques} issues d'ordinateurs, de téléphones, de réseaux ou de tout autre support électronique, dans le but d'appuyer une enquête (judiciaire, administrative ou privée). De nos jours, elle se voit octroyée progressivement une plus grande importance dans un monde marqué par la digitalisation et la cybercriminalité et plus dans le domaine policier. 
+
+De ce fait, en quoi l'investigation numérique constitue-t-elle un outil indispensable pour la police judiciaire dans la lutte contre la criminalité moderne? Dans la suite de notre analyse nous verrons tout d'abord les apports essentiels de l'investigation numérique à la police judiciaire, ensuite ses principaux domaines d'application et enfin les outils, défis et limites de l'investigation numérique.
+
+\section{Les apports essentiels de l'investigation numérique à la police judiciaire}
+
+\subsection{Accès à des preuves invisibles dans le monde physique}
+
+\begin{itemize}[leftmargin=*]
+    \item L'investigation numérique permet de retrouver des traces \textbf{difficiles à effacer} : historiques de navigation, conversations supprimées, métadonnées, fichiers effacés mais récupérables.
+    \item Elle ouvre ainsi une "scène de crime virtuelle" complémentaire à la scène physique.
+\end{itemize}
+
+\subsection{Lutte contre la cybercriminalité}
+
+\begin{itemize}[leftmargin=*]
+    \item Les enquêtes sur le \textbf{piratage informatique, les fraudes en ligne, les ransomwares, le phishing} reposent directement sur ces techniques.
+    \item Sans investigation numérique, ces infractions resteraient \textbf{impossibles à résoudre} car elles laissent très peu de traces matérielles.
+\end{itemize}
+
+\subsection{Identification et traçage des auteurs}
+
+\begin{itemize}[leftmargin=*]
+    \item Analyse des adresses IP, des journaux système, des connexions réseaux permettent de \textbf{remonter jusqu'au suspect}.
+    \item Récupération de données de géolocalisation ou de communication (SMS, WhatsApp, email) fournit des \textbf{éléments d'identification et d'alibi}.
+\end{itemize}
+
+\subsection{Reconstitution des événements}
+
+\begin{itemize}[leftmargin=*]
+    \item L'investigation permet de \textbf{reconstituer une chronologie numérique} :
+    \begin{itemize}
+        \item Quand un fichier a été créé, modifié, transféré?
+        \item À quelle heure un utilisateur s'est connecté?
+        \item Quelles données ont été effacées ou copiées?
+    \end{itemize}
+    \item Ces éléments aident les enquêteurs à \textbf{reconstruire le scénario d'un crime}.
+\end{itemize}
+
+\subsection{Apport de preuves recevables en justice}
+
+\begin{itemize}[leftmargin=*]
+    \item Les procédures de collecte et de conservation (intégrité, traçabilité) assurent que les preuves numériques sont \textbf{valides et utilisables devant un tribunal}.
+    \item Cela permet à la justice de prendre des décisions \textbf{basées sur des preuves techniques solides}.
+\end{itemize}
+
+\subsection{Soutien aux enquêtes traditionnelles}
+
+\begin{itemize}[leftmargin=*]
+    \item L'investigation numérique \textbf{complète les méthodes classiques} :
+    \begin{itemize}
+        \item Vidéosurveillance + analyse des communications téléphoniques.
+        \item Fouilles physiques + recherche d'indices numériques.
+    \end{itemize}
+    \item Elle donne une vision \textbf{globale} des faits.
+\end{itemize}
+
+\section{Principaux domaines d'application de l'investigation numérique}
+
+L'investigation numérique, ou forensic numérique, est devenue un outil stratégique dans les missions régaliennes des forces de l'ordre. Elle permet d'identifier, de collecter, d'analyser et de préserver des preuves numériques issues de téléphones, ordinateurs, serveurs, réseaux ou systèmes électroniques, afin de résoudre des affaires criminelles complexes et de soutenir la justice. Au Cameroun, son importance ne cesse de croître, notamment dans la lutte contre la cybercriminalité, la grande criminalité transfrontalière, la criminalité financière, et les crimes violents.
+
+\subsection{Lutte contre la cybercriminalité}
+
+La cybercriminalité regroupe toutes les infractions commises à l'aide de moyens numériques, telles que le piratage informatique, la fraude en ligne, l'usurpation d'identité ou la diffusion de contenus illicites.
+
+\textbf{Exemples camerounais :}
+\begin{itemize}[leftmargin=*]
+    \item En 2022, un réseau de fraude en ligne basé à Douala a été démantelé après que les enquêteurs aient analysé les transactions numériques et localisé les auteurs grâce à la récupération des adresses IP et des journaux de connexion (logs).
+    \item La Gendarmerie nationale, par son unité spécialisée, a utilisé des techniques d'investigation numérique pour identifier des fraudeurs impliqués dans des opérations de phishing ciblant des entreprises camerounaises.
+\end{itemize}
+
+\textbf{Techniques employées :}
+\begin{itemize}[leftmargin=*]
+    \item Analyse des journaux de connexion et logs de serveurs.
+    \item Récupération de données effacées sur disques durs et smartphones.
+    \item Traçage des flux financiers numériques pour identifier les auteurs.
+\end{itemize}
+
+\subsection{Lutte contre la grande criminalité transfrontalière et le terrorisme}
+
+Les réseaux criminels transfrontaliers, tels que le trafic de drogues, la traite d'êtres humains, et le terrorisme, exploitent souvent les outils numériques pour coordonner leurs activités. L'investigation numérique permet de suivre ces réseaux et d'anticiper leurs actions.
+
+\textbf{Exemples camerounais :}
+\begin{itemize}[leftmargin=*]
+    \item Interpol Cameroun, à travers son pôle spécialisé, a permis d'identifier et d'arrêter plusieurs réseaux de trafic de stupéfiants entre le Nigeria et le Cameroun grâce à l'analyse des données informatiques et téléphoniques saisies lors d'opérations conjointes.
+    \item Dans la lutte contre Boko Haram, l'extraction et l'analyse de messages sur téléphones et ordinateurs saisis dans l'Extrême-Nord ont permis de cartographier les réseaux logistiques et d'anticiper des attaques.
+\end{itemize}
+
+\textbf{Techniques employées :}
+\begin{itemize}[leftmargin=*]
+    \item Analyse de métadonnées de communications (SMS, emails, applications de messagerie).
+    \item Géolocalisation et suivi des appareils numériques.
+    \item Profilage et cartographie des réseaux criminels via l'exploitation de données volumineuses.
+\end{itemize}
+
+\subsection{Lutte contre la criminalité financière et économique}
+
+La criminalité économique implique souvent des flux financiers complexes et des fraudes numériques. L'investigation numérique est essentielle pour détecter la corruption, le blanchiment d'argent et les détournements de fonds publics ou privés.
+
+\textbf{Exemples camerounais :}
+\begin{itemize}[leftmargin=*]
+    \item En 2021, un réseau de détournement de fonds publics a été démantelé après l'analyse des fichiers numériques provenant d'ordinateurs administratifs et de comptes bancaires électroniques.
+    \item Des audits numériques ont permis d'identifier des fraudes fiscales et des transactions suspectes dans plusieurs entreprises opérant au Cameroun.
+\end{itemize}
+
+\textbf{Techniques employées :}
+\begin{itemize}[leftmargin=*]
+    \item Traçage et analyse des transactions électroniques.
+    \item Corrélation entre données numériques et documents physiques.
+    \item Data mining et analyse de bases de données comptables et bancaires.
+\end{itemize}
+
+\subsection{Lutte contre la criminalité organisée et les crimes violents}
+
+Les enquêtes sur les homicides, kidnappings et vols à main armée bénéficient grandement de l'investigation numérique. Elle permet de reconstituer des événements et de relier des suspects entre eux.
+
+\textbf{Exemples camerounais :}
+\begin{itemize}[leftmargin=*]
+    \item Affaire de kidnapping à Yaoundé : l'analyse des téléphones des victimes et suspects a permis de reconstituer les déplacements et d'identifier les complices.
+    \item Vols à main armée dans le Littoral : l'exploitation des vidéos de vidéosurveillance et des données des téléphones portables a permis d'élucider plusieurs affaires complexes.
+\end{itemize}
+
+\textbf{Techniques employées :}
+\begin{itemize}[leftmargin=*]
+    \item Reconstitution chronologique des événements à partir des appareils numériques.
+    \item Analyse vidéo et extraction d'informations depuis les images de surveillance.
+    \item Analyse des communications téléphoniques pour identifier les réseaux de complicité.
+\end{itemize}
+
+\subsection{Protection de l'enfance et lutte contre la pédopornographie}
+
+L'investigation numérique permet d'identifier et de neutraliser les réseaux diffusant des contenus pédopornographiques, protégeant ainsi les victimes.
+
+\textbf{Exemples camerounais :}
+\begin{itemize}[leftmargin=*]
+    \item En 2022, le Commissariat central de Yaoundé a démantelé un réseau de diffusion de contenus pédopornographiques sur les réseaux sociaux grâce à l'analyse de données numériques et à la collaboration avec Interpol et Europol.
+\end{itemize}
+
+\textbf{Techniques employées :}
+\begin{itemize}[leftmargin=*]
+    \item Analyse d'images et vidéos pour identifier les victimes.
+    \item Traçage des adresses IP et des comptes en ligne des auteurs.
+    \item Collaboration internationale pour le recoupement des informations et l'identification des suspects.
+\end{itemize}
+
+\subsection{Investigation numérique dans les enquêtes judiciaires classiques}
+
+Même pour des enquêtes ne relevant pas directement de la cybercriminalité, l'exploitation des données numériques renforce la capacité des forces de l'ordre à établir des preuves solides.
+
+\textbf{Exemples camerounais :}
+\begin{itemize}[leftmargin=*]
+    \item Affaires de fraude électorale locale : l'analyse des bases de données électorales et des tableurs numériques a permis de détecter des irrégularités dans plusieurs bureaux de vote.
+    \item Conflits fonciers : l'exploitation des messages électroniques et documents numériques a permis de révéler des falsifications et transactions illégales.
+\end{itemize}
+
+\textbf{Techniques employées :}
+\begin{itemize}[leftmargin=*]
+    \item Analyse et authentification de documents numériques.
+    \item Extraction de preuves depuis ordinateurs, smartphones et serveurs.
+    \item Préservation des preuves numériques pour leur utilisation en justice.
+\end{itemize}
+
+\subsection{Synergie avec les organisations internationales et autres forces}
+
+L'investigation numérique au Cameroun ne se limite pas aux forces locales. Les collaborations internationales sont cruciales pour traquer les réseaux criminels transnationaux.
+
+\textbf{Exemples camerounais :}
+\begin{itemize}[leftmargin=*]
+    \item Le pôle Interpol de Yaoundé coordonne des opérations avec des services étrangers pour identifier des fraudeurs et cybercriminels opérant depuis le Cameroun vers l'Europe et l'Afrique.
+    \item Les échanges de données sécurisés permettent d'enquêter sur des réseaux de trafic de drogues, blanchiment d'argent et cyberfraude à l'échelle internationale.
+\end{itemize}
+
+\textbf{Techniques employées :}
+\begin{itemize}[leftmargin=*]
+    \item Partage sécurisé et légal de preuves numériques.
+    \item Utilisation de logiciels spécialisés d'analyse de données massives.
+    \item Coopération inter-agences pour la traque et l'arrestation de suspects internationaux.
+\end{itemize}
+
+\section{Les outils, défis et limites de l'investigation numérique}
+
+\subsection{Les principaux outils et techniques}
+
+\subsubsection{Logiciels de récupération et d'analyse de données}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Récupération des données supprimées} : Utilisation d'outils comme Autopsy (gratuit), FTK Imager ou Cellebrite pour restaurer fichiers, messages et historiques même après suppression
+    \item \textbf{Analyse forensic avancée} : Examens approfondis des métadonnées, signatures numériques et artefacts système
+    \item \textbf{Spécialisation mobile} : Oxygen Forensic Detective et Mobiledit pour l'extraction données smartphones
+\end{itemize}
+
+\subsubsection{Techniques d'investigation réseau et surveillance}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Analyse de trafic} : Wireshark pour intercepter et analyser communications réseau
+    \item \textbf{Investigation sur dark web} : Outils comme AIL pour surveiller marchés illicites et forums criminels
+    \item \textbf{Surveillance légale} : Plateformes de Lawful Interception pour interception communications sous mandat
+\end{itemize}
+
+\subsubsection{Lutte contre le chiffrement et protection des données}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Cryptanalyse} : Techniques pour contourner chiffrements légers et mots de passe faibles
+    \item \textbf{Accès sécurisé} : Write-blockers pour garantir intégrité preuves durant acquisition
+    \item \textbf{Attaques dictionnaire/brute force} : Hashcat pour craquage mots de passe sur ordonnance judiciaire
+\end{itemize}
+
+\subsection{Les défis rencontrés au Cameroun}
+
+\subsubsection{Explosion et complexité des données}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Volume exponentiel} : Un smartphone peut contenir 128GB+ de données à analyser
+    \item \textbf{Diversité des formats} : Fichiers multimédias, applications, cloud data nécessitant outils spécialisés
+    \item \textbf{Temps d'analyse} : Une analyse forensic complète peut prendre plusieurs semaines
+\end{itemize}
+
+\subsubsection{Respect des droits fondamentaux}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Vie privée vs sécurité} : Équilibre délicat entre investigation et respect Article 9 Constitution camerounaise
+    \item \textbf{Cadre légal} : Nécessité stricte de mandats conformément à la loi cybersécurité Cameroun 2010
+    \item \textbf{Proportionnalité} : L'investigation doit être ciblée et justifiée par nécessité enquête
+\end{itemize}
+
+\subsubsection{Évolution technologique et formation}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Obsolescence rapide} : Nouveaux OS, applications et techniques de chiffrement mensuelles
+    \item \textbf{Besoins formation continue} : Nécessité recyclage permanent des enquêteurs
+    \item \textbf{Coût des équipements} : Licences logicielles dépassant souvent 10 millions FCFA/an
+\end{itemize}
+
+\subsection{Les limites actuelles}
+
+\subsubsection{Difficultés juridiques camerounaises}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Admissibilité preuves} : Risque de rejet si chaîne de custody non respectée
+    \item \textbf{Preuve numérique fragile} : Vulnerable altération, contestation authenticité
+    \item \textbf{Harmonisation légale} : Besoin standards clairs pour preuves électroniques tribunaux
+\end{itemize}
+
+\subsubsection{Dépendance à l'expertise technique}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Pénurie experts} : Moins de 50 experts certifiés au Cameroun
+    \item \textbf{Centralisation compétences} : Expertise concentrée à Yaoundé et Douala
+    \item \textbf{Délais allongés} : Files d'attente pour analyses urgentes
+\end{itemize}
+
+\subsubsection{Contraintes matérielles et financières}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Équipements coûteux} : Station forensic complète est d'environ 25 millions FCFA
+    \item \textbf{Maintenance difficile} : Pannes, mises à jour, support technique limité
+    \item \textbf{Budget insuffisant} : Priorisation nécessaire entre enquêtes
+\end{itemize}
+
+\section{Conclusion}
+
+En définitive, cette analyse a démontré de manière éclatante que l'investigation numérique s'est imposée comme un outil indispensable au sein de la police judiciaire, et plus particulièrement dans le contexte camerounais. Face à une criminalité moderne qui a massivement migré vers le numérique, elle est passée du statut de compétence spécialisée à celui de pilier fondamental de toute enquête criminelle.
+
+Notre réflexion a successivement mis en lumière ses apports essentiels -- en faisant un instrument privilégié pour accéder à des preuves invisibles, identifier les auteurs et reconstituer des événements avec une précision inédite. Nous avons ensuite exploré la diversité de ses domaines d'application, de la lutte contre la cybercriminalité à la résolution des crimes violents en passant par le démantèlement des réseaux transnationaux, illustrant son utilité opérationnelle à travers de multiples affaires traitées sur le sol camerounais.
+
+Cependant, cet exposé a aussi dressé un constat lucide : cet atout majeur se heurte à des défis et des limites substantielles. L'explosion du volume de données, la complexité technique croissante, les contraintes juridiques et les limites matérielles et humaines, notamment la pénurie d'experts et le coût des équipements, constituent des freins réels à son efficacité maximale au Cameroun.
+
+Malgré ces obstacles, la trajectoire est tracée : il n'y a pas de retour en arrière possible. L'investigation numérique n'est plus une option, mais une nécessité pour la sécurité nationale et l'efficacité de la justice. Pour consolider ses acquis, le Cameroun doit impérativement investir dans la formation continue de ses enquêteurs, le renforcement des moyens logistiques des unités spécialisées et l'adaptation permanente de son cadre juridique.
+
+En guise d'ouverture, l'avenir de l'investigation numérique s'annonce à la fois passionnant et périlleux. L'avènement de l'intelligence artificielle, l'utilisation croissante du métavers par les criminels, la menace des deepfakes pour la manipulation de preuves et les défis de l'ère post-quantique constituent les nouvelles frontières que la police judiciaire devra explorer. La capacité du Cameroun à anticiper ces mutations technologiques déterminera son succès dans la lutte contre la criminalité de demain. Ainsi, loin d'être un simple outil technique, l'investigation numérique s'affirme comme un élément stratégique pour la souveraineté et la sécurité numérique de la nation.
+
+\end{document}
