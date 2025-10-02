@@ -1,0 +1,581 @@
+\documentclass[a4paper,12pt]{article}
+
+% Encodage et langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% Mise en page
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\usepackage{setspace}
+\onehalfspacing
+
+% Maths, graphiques, tables, code
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={Travaux Dirigés : exercice chapitre 1},
+  pdfauthor={--}
+}
+
+% Configuration du listing pour le code
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\tiny,
+  frame=single,
+  backgroundcolor=\color{white}
+}
+
+%================ PAGE DE GARDE ==================
+\begin{document}
+\pagestyle{empty}
+
+\noindent
+\begin{minipage}[t]{0.33\textwidth}
+    \centering
+    \textbf{REPUBLIQUE DU CAMEROUN} \\[0.2cm]
+    Paix -- Travail -- Patrie \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{UNIVERSITE DE YAOUNDE I} \\[0.2cm]
+    ********************** \\[0.2cm]
+    \textbf{ECOLE NATIONALE SUPERIEURE} \\ 
+    \textbf{POLYTECHNIQUE DE YAOUNDE} \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{DEPARTEMENT DE GENIE}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.33\textwidth}
+    \centering
+    \vspace{-0.3cm}
+    \includegraphics[width=3cm]{logo_polytechnique.png.png} % Remplace par ton logo
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{logo_polytechnique.png.png}
+    \caption{Enter Caption}
+    \label{fig:placeholder}
+\end{figure}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.33\textwidth}
+    \centering
+    \textbf{REPUBLIC OF CAMEROON} \\[0.2cm]
+    Peace -- Work -- Fatherland \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{UNIVERSITY OF YAOUNDE I} \\[0.2cm]
+    ********************** \\[0.2cm]
+    \textbf{NATIONAL ADVANCED SCHOOL} \\ 
+    \textbf{OF ENGINEERING OF YAOUNDE} \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{DEPARTMENT OF COMPUTER}
+\end{minipage}
+
+\vspace{2cm}
+
+\begin{center}
+    \rule{\linewidth}{0.6pt} \\[0.4cm]
+    {\LARGE \textbf{Exercices chapitre 1}} \\[0.3cm]
+    {\Large \textbf{Philosophie et Fondements de l'Investigation Numérique}} \\[0.3cm]
+    \rule{\linewidth}{0.6pt}
+\end{center}
+
+\vspace{2.2cm}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \textbf{Matricule:} 22p108 \\[0.2cm]
+    \textbf{Nom :} TAPA KEMEGNE LOIC
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \raggedleft \textbf{Superviseur :} M. Minka \\[0.2cm]
+
+\end{minipage}
+
+\vspace{3cm}
+
+\vfill
+
+\begin{center}
+    \textbf{Année Scolaire : 2025--2026}
+\end{center}
+
+\newpage
+
+% Corps du document
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\tableofcontents
+\newpage
+
+% ================= PARTIE 1 =================
+\section{Fondements Philosophiques et Épistémologiques}
+
+\subsection{Exercice 1 -- Analyse critique du paradoxe de la transparence (Byung-Chul Han)}
+
+\paragraph{Objectif.} Produire une analyse critique approfondie, illustrer par un cas concret d'investigation et proposer une résolution inspirée de l'éthique kantienne et de principes pratiques pour l'investigateur.
+
+\paragraph{Introduction (contexte et enjeu).} Le concept de la \emph{transparence} tel que discuté par Byung-Chul Han concerne l'aspiration moderne à rendre visibles les mécanismes publics et privés pour accroître la responsabilité et la confiance. Toutefois, la transparence totale peut entraîner la disparition des espaces d'intimité, la sur-exposition des individus et un nivellement du jugement moral. Dans le contexte de l'investigation numérique, ce paradoxe se manifeste par le conflit entre la nécessité de collecter des preuves (et donc d'accroître la visibilité) et le droit des individus à la vie privée.
+
+\paragraph{Analyse détaillée.}
+\begin{enumerate}
+  \item \textbf{Mécanismes techniques et normatifs} : Les systèmes de collecte (journaux de logs, métadonnées, surveillance réseau) augmentent la visibilité. Les plateformes centralisées amplifient ces données en les rendant faciles à agréger. Les normes (lois sur la surveillance, obligations de conservation, politiques d'accès) varient selon les États.
+  \item \textbf{Effets sociaux} : La transparence généralisée modifie les comportements (effet Panoptique), induit de l'auto-censure et fragilise les minorités. Elle crée aussi une économie de l'attention et une vulnérabilité aux abus de pouvoir.
+  \item \textbf{Effets épistémologiques} : L'investigateur se trouve face à des masses d'informations ; la qualité prime sur la quantité. La pression pour publier des résultats rapides peut mener à des interprétations hâtives et à des violations de la vie privée.
+  \item \textbf{Tensions juridiques} : Les dispositifs légaux (ex. mandat de surveillance, sauvegarde de preuves) entrent fréquemment en tension avec les droits fondamentaux (vie privée, protection des données).
+\end{enumerate}
+
+\paragraph{Cas concret d'investigation.}  
+\textbf{Contexte :} État X met en place une surveillance légale étendue des communications pour lutter contre un groupe terroriste. Les opérateurs télécoms doivent conserver les métadonnées pendant 10 ans et les rendre accessibles aux agences sur simple demande.
+
+\textbf{Conséquences :}
+\begin{itemize}
+  \item Pro : Les enquêtes deviennent plus rapides et plus efficaces (corrélations entre suspects, établissement d'alibis).
+  \item Con : Des citoyens innocents voient leurs vies scrutées ; un fonctionnaire malveillant peut exploiter ces accès.
+  \item Problème éthique : absence de garanties procédurales indépendantes pour contrôler l'usage.
+\end{itemize}
+
+\paragraph{Résolution pratique inspirée de Kant (et compatible avec le droit positif).}
+Kant recommande de traiter chaque personne comme fin, non comme moyen. Traduit en procédures forensiques :
+\begin{itemize}
+  \item \textbf{Principe de proportionnalité} : collecte minimale nécessaire ; durée limitée ; accès restreint par mandate judiciaire.
+  \item \textbf{Principe de finalité} : utilisation uniquement pour l'instruction désignée.
+  \item \textbf{Transparence procédurale} : audit indépendant des accès, journalisation immuable des consultations (logs signés), mécanisme de recours pour les personnes affectées.
+  \item \textbf{Anonymisation proactive} : lorsque possible, analyser et corréler des données anonymisées, lever l'identité seulement si seuils probatoires sont atteints.
+\end{itemize}
+
+\paragraph{Proposition opérationnelle (checklist pour l'investigateur).}
+\begin{enumerate}
+  \item Vérifier la nécessité et la proportionnalité de la collecte.
+  \item Obtenir les autorisations légales appropriées.
+  \item Utiliser des méthodes d'analyse anonymisées tant que possible.
+  \item Tenir un registre immuable et auditable des accès (signatures numériques).
+  \item Documenter l'impact potentiel sur des tiers et prévoir mesures d'atténuation.
+\end{enumerate}
+
+\paragraph{Conclusion.} Le paradoxe de la transparence exige une gouvernance procédurale qui incorpore des garde-fous techniques (anonymisation, journalisation immuable), juridiques (mandats, audits) et éthiques (principe kantien de respect de la personne). L'investigateur numérique devient l'agent procédural garantissant l'équilibre entre vérité et intimité.
+
+\vspace{0.5cm}
+
+% ================= PARTIE 1 - Ex2 =================
+\subsection{Exercice 2 -- Transformation ontologique du numérique}
+
+\paragraph{But.} Comparer la conception de l'être chez Heidegger et son adaptation à l'ère numérique ; analyser un profil social complet comme manifestation d'« être-par-la-trace » ; évaluer l'impact sur la notion de preuve légale.
+
+\paragraph{Heidegger : l'être-au-monde.}  
+Heidegger définit l'humain comme \emph{Dasein} — être qui est conscient de son être et se situe dans un monde de significations. L'existence est toujours relationnelle et contextuelle ; le sens n'est pas une donnée isolée mais se construit par les pratiques.
+
+\paragraph{Adaptation numérique : être-par-la-trace.}  
+Dans l'ère numérique, l'existence humaine reçoit une \emph{extension} : les traces (logs, posts, métadonnées) deviennent des éléments constitutifs du profil identitaire. Ce nouveau \emph{mode d'être} produit :
+\begin{itemize}
+  \item {\bf Permanence apparente} : des traces peuvent survivre longtemps et être recombinées.
+  \item {\bf Fragmentation} : des aspects de l'individu sont dispersés dans divers silos.
+  \item {\bf Performativité accrue} : l'individu est conscient des traces et peut parfois les modeler.
+\end{itemize}
+
+\paragraph{Analyse d'un profil social complet.}  
+Prenons l'exemple synthétique d'un profil social : identité déclarative, historique de connexions, géolocalisations, transactions, réponses à des publicités. Interprété comme \emph{être-par-la-trace}, ce profil :
+\begin{enumerate}
+  \item Représente des actes — pas nécessairement des intentions pures.
+  \item Peut être mal- ou sur-interprété si sorti de son contexte (erreur d'herméneutique).
+  \item Rend possible la construction de trajectoires individuelles (prédictif, parfois biaisé).
+\end{enumerate}
+
+\paragraph{Impact sur la preuve légale.}  
+\begin{itemize}
+  \item \textbf{Avantage} : richesse d'éléments corrélables (timestamp, géo, captures).
+  \item \textbf{Risque} : manipulation, altération, biais d'interprétation algorithmique.
+  \item \textbf{Conséquence} : critères renforcés d'admissibilité — validation croisée, métadonnées de provenance, horodatage certifié.
+\end{itemize}
+
+\paragraph{Conclusion.} L'« être » numérique demande une herméneutique spécifique : l'interprétation doit intégrer contexte, chaîne de custody, et limiter les inférences causales injustifiées.
+
+\newpage
+
+% ================= PARTIE 2 =================
+\section{Mathématiques de l'Investigation (Approfondi)}
+
+\subsection{Exercice 3 -- Calcul d'entropie de Shannon appliquée (implémentation et analyse statistique)}
+
+\paragraph{Rappel formel.} Pour une variable discrète \(X\) prenant des valeurs \(x\in\mathcal{X}\) avec probabilité \(p(x)\),
+\[
+H(X) = -\sum_{x\in\mathcal{X}} p(x)\log_2 p(x).
+\]
+Appliqué à un fichier binaire, on estime \(p(b)\) pour chaque octet \(b\in\{0,\dots,255\}\) par la fréquence relative.
+
+\paragraph{Script Python complet (robuste).}
+\begin{lstlisting}[language=Python]
+#!/usr/bin/env python3
+import math
+import sys
+from collections import Counter
+
+def shannon_entropy_bytes(data: bytes) -> float:
+    if not data:
+        return 0.0
+    counts = Counter(data)
+    n = len(data)
+    return -sum((c / n) * math.log2(c / n) for c in counts.values())
+
+def entropy_per_byte(file_path):
+    with open(file_path, "rb") as f:
+        data = f.read()
+    H_bits_per_byte = shannon_entropy_bytes(data)
+    return H_bits_per_byte
+
+if __name__ == "__main__":
+    for fname in sys.argv[1:]:
+        H = entropy_per_byte(fname)
+        print(f"{fname} -> H = {H:.4f} bits/octet")
+\end{lstlisting}
+
+\paragraph{Interprétation et seuils.}
+\begin{itemize}
+  \item Texte en français : entropie basse (ex. 1.2--2.0 bits/car.), dépendant du codage.
+  \item Images compressées (JPEG) : entropie élevée, typiquement 6--7.5 bits/octet.
+  \item Données chiffrées / flux aléatoire : proche de 8 bits/octet.
+\end{itemize}
+
+\paragraph{Méthodologie de détection de chiffrement.}
+\begin{enumerate}
+  \item Calculer \(H\) sur la fenêtre entière et sur fenêtres locales (sliding window).
+  \item Si \(H\) moyen $>$ 7.6 bits/octet et faible variance, suspecter chiffrement ou flux compressé fortement.
+  \item Compléter avec tests supplémentaires : distribution uniforme (test du \(\chi^2\)), tests NIST (approx.), recherche d'entropie élevée localisée.
+\end{enumerate}
+
+\paragraph{Sélection du seuil : justification statistique.}  
+Le seuil peut être déterminé empiriquement : collecter échantillons représentatifs (texte, images, fichiers chiffrés), estimer les distributions d'entropie, choisir seuil pour maximiser la sensibilité/specificité (ROC). Exemple : seuil \(T=7.5\) bits/octet peut donner une bonne séparation pratique.
+
+\vspace{0.3cm}
+
+\subsection{Exercice 4 -- Théorie des graphes : construction, métriques et implémentation}
+
+\paragraph{Modélisation.} Graphe orienté pondéré \(G=(V,E,w)\), nœuds = numéros/identifiants. Arête \(u\to v\) avec poids montant d'appels, nombre d'appels ou durée.
+
+\paragraph{Métriques et algorithmes.}
+\begin{itemize}
+  \item \textbf{Degré} (in/out) : indicateur d'activité.
+  \item \textbf{Centralité d'intermédiarité (betweenness)} : mesure d'importance comme broker.
+  \item \textbf{Centralité de proximité} : efficacité d'accès au reste du réseau.
+  \item \textbf{PageRank / eigenvector} : influence relative.
+\end{itemize}
+
+\paragraph{Implémentation exemple (NetworkX).}
+\begin{lstlisting}[language=Python]
+import networkx as nx
+G = nx.DiGraph()
+# Exemple : ajouter des arêtes (caller, callee, weight=durée en secondes)
+edges = [("A","B",30),("B","C",20),("A","C",10),("C","D",120)]
+for u,v,w in edges:
+    G.add_edge(u,v,weight=w)
+
+deg_in = G.in_degree()
+bet = nx.betweenness_centrality(G, weight='weight')
+clos = nx.closeness_centrality(G)
+pr = nx.pagerank(G, weight='weight')
+\end{lstlisting}
+
+\paragraph{Identification des nœuds critiques.}  
+Ordonnés par betweenness décroissante ; les nœuds avec betweenness élevée sont souvent chargés de faire transiter l'information (brokers). Compléter par mesure de résilience (impact en cas de suppression du nœud).
+
+\paragraph{Complexité.} Betweenness utilisant Brandes : \(O(|V||E|)\) pour graphes non pondérés ; pondérés similaire mais coûteux sur de grandes tailles. Pour réseaux de télécoms, utiliser algorithmes approximatifs si nécessaire.
+
+\vspace{0.3cm}
+
+\subsection{Exercice 5 -- Modélisation de l'effet papillon en forensique (simulation et estimation de l'exposant de Lyapunov)}
+
+\paragraph{Problème.} Un petit changement (modification d'un timestamp) peut se propager et perturber la reconstruction chronologique. On souhaite simuler et estimer un exposant \(\lambda\) effectif.
+
+\paragraph{Simulation (ébauche de protocole).}
+\begin{enumerate}
+  \item Générer une timeline initiale de \(N=1000\) événements : \(t_i = t_0 + \sum_{k=1}^i \Delta_k\) avec \(\Delta_k\) aléatoire (ex. loi exponentielle pour inter-arrivées).
+  \item Corréler événements (liens causaux) selon règles simples (ex. dépendances temporelles).
+  \item Introduire une perturbation : modifier \(t_j\) de \(\delta_0\) (±30s).
+  \item Recalculer heuristiques de corrélation (matching), mesurer le nombre \(n(t)\) d'événements dont l'attribution a changé au temps \(t\).
+  \item Estimer \(\lambda\) par régression : considérer \(\Delta(t)=\| \delta(t)\|\) et ajuster \(\log \Delta(t) = \log \Delta(0) + \lambda t\).
+\end{enumerate}
+
+\paragraph{Code prototype (concept).}
+\begin{lstlisting}[language=Python]
+# Pseudocode esquissé
+# 1. Generate events
+# 2. Build causal links
+# 3. Perturb a timestamp
+# 4. Recompute matching using simple heuristic
+# 5. Count changed assignments over time
+# 6. Fit slope of log(delta) vs t to estimate lambda
+\end{lstlisting}
+
+\paragraph{Interprétation.} Si \(\lambda>0\) la perturbation s'amplifie ; si \(\lambda<0\) elle se dissipe. La valeur numérique dépendra du modèle de corrélation choisi ; cette simulation guide la robustesse des algorithmes de reconstruction.
+
+\newpage
+
+% ================= PARTIE 3 =================
+\section{Révolution quantique : implications et calculs}
+
+\subsection{Exercice 6 -- Schrödinger adapté au numérique : protocole d'observation minimale}
+
+\paragraph{Problème conceptuel.} Peut-on considérer un fichier comme étant en \emph{superposition} entre \emph{présent} et \emph{effacé} ? En pratique, des données peuvent exister sur disque sous forme récupérable mais non allouée (espace libre), ce qui ressemble conceptuellement à une superposition jusqu'à la mesure (tentative de récupération).
+
+\paragraph{Protocole pour minimiser l'altération (pragmatique).}
+\begin{enumerate}
+  \item \textbf{Isolation physique} : déconnecter l'hôte, utiliser write-blocker pour disques.
+  \item \textbf{Image bit-à-bit immuable} : créer des snapshots forensiques signés (hash) ; documenter la chaîne de custody.
+  \item \textbf{Analyse en environnement isolé} : travailler sur copies (images), pas sur l'original.
+  \item \textbf{Mesures pour mémoire volatile} : capturer RAM avec outils certifiés, horodater précisément.
+  \item \textbf{Minimisation des lectures d'écriture} : utiliser méthodes non-invasives et limiter opérations qui pourraient provoquer GC/écrasement.
+\end{enumerate}
+
+\paragraph{Implications judiciaires.} Adopter la métaphore quantique aide à justifier l'approche probabiliste : toute mesure a un coût (altération potentielle). Documentation et méthodologie permettent de quantifier l'incertitude.
+
+\vspace{0.3cm}
+
+\subsection{Exercice 7 -- Calculs sur la sphère de Bloch (calcul détaillé)}
+
+\paragraph{Énoncé.} Pour \(\theta=\frac{\pi}{3}\) (donc \(\theta/2=\pi/6\)) et \(\phi=\frac{\pi}{4}\),
+\[
+|\psi\rangle = \cos\frac{\theta}{2}|0\rangle + e^{i\phi}\sin\frac{\theta}{2}|1\rangle.
+\]
+
+\paragraph{Calculs numériques.}
+\[
+\cos\frac{\pi}{6} = \frac{\sqrt{3}}{2}\approx 0.8660254,\qquad
+\sin\frac{\pi}{6} = \frac{1}{2}=0.5.
+\]
+Probabilités :
+\[
+P(0) = \left|\cos\frac{\theta}{2}\right|^2 = \left(\frac{\sqrt{3}}{2}\right)^2 = \frac{3}{4}=0.75,
+\]
+\[
+P(1) = \left|\sin\frac{\theta}{2}\right|^2 = \left(\frac{1}{2}\right)^2 = \frac{1}{4}=0.25.
+\]
+
+\paragraph{Coordonnées sur la sphère de Bloch.} Les coordonnées cartésiennes :
+\[
+x = \sin\theta\cos\phi,\quad y=\sin\theta\sin\phi,\quad z=\cos\theta.
+\]
+Avec \(\theta=\pi/3\), \(\phi=\pi/4\),
+\[
+\sin\theta=\sin\frac{\pi}{3}=\frac{\sqrt{3}}{2}\approx0.8660,\quad
+\cos\theta=\cos\frac{\pi}{3}=\frac{1}{2}=0.5.
+\]
+Ainsi
+\[
+x\approx 0.8660\cdot\frac{\sqrt{2}}{2}\approx 0.6124,\quad
+y\approx 0.6124,\quad
+z=0.5.
+\]
+
+\paragraph{Commentaire forensique.} Dans un protocole de preuve quantique, P(0) et P(1) représentent les probabilités de mesurer l'état dans la base computationnelle. La présence d'incertitude est inhérente ; par conséquent, la preuve quantique sera toujours exprimée en termes de confiance statistique (intervalle de confiance, erreur admissible).
+
+\subsection{Exercice 8 -- Théorème de non-clonage et solutions pratiques}
+
+\paragraph{Esquisse de démonstration.} Supposons qu'il existe une transformation unitaire \(U\) telle que pour tout état inconnu \(|\psi\rangle\),
+\[
+U(|\psi\rangle\otimes|0\rangle) = |\psi\rangle\otimes|\psi\rangle.
+\]
+En appliquant \(U\) sur deux états différents \(|\psi_1\rangle\) et \(|\psi_2\rangle\), puis en prenant produit scalaire, on obtient une contradiction s'il existe \(\langle\psi_1|\psi_2\rangle\ne 0\). Voir la preuve classique de Wootters & Zurek.
+
+\paragraph{Conséquences forensiques.}
+\begin{itemize}
+  \item Impossibilité de ``copier'' parfaitement un état quantique inconnu → remet en question la duplication forensique telle qu'on l'entend aujourd'hui.
+  \item Nécessité de nouvelles chaînes de custody (mesure référencée, protocoles ZK).
+\end{itemize}
+
+\paragraph{Alternatives pratiques.}  
+\begin{itemize}
+  \item \textbf{Preuve interactive (ZK-NR)} : prouver sans divulguer l'information (zero-knowledge) et garantir la non-répudiation.
+  \item \textbf{Techniques de redondance classique} : stocker preuves classiques dérivées (hash, timestamps) qui restent valides si mesurées correctement.
+  \item \textbf{Méta-mesures} : mesurer et archiver résultats de mesure plutôt que l'état brut (avec attestation).
+\end{itemize}
+
+% ================= PARTIE 4 =================
+\section{Paradoxe de l'Authenticité Invisible (Approfondi)}
+
+\subsection{Exercice 9 -- Formalisation mathématique et protocole d'estimation de $\hbar_{num}$}
+
+\paragraph{Définition.} Soit \(P\) une preuve avec indices \(A(P)\in[0,1]\) (authenticité), \(C(P)\in[0,1]\) (confidentialité), \(O(P)\in[0,1]\) (opposabilité). Le paradoxe s'exprime :
+\[
+\forall P,\quad A(P)\cdot C(P) \le 1 - \delta,
+\]
+pour un \(\delta>0\). L'analogie avec Heisenberg est donnée par :
+\[
+\Delta A\cdot \Delta C \ge \frac{\hbar_{num}}{2}.
+\]
+
+\paragraph{Mesures pratiques.} Définir des métriques :
+\begin{itemize}
+  \item \(A(P)\) : probabilité qu'une preuve n'ait pas été altérée (vérifiée par checksums, signatures, provenance).
+  \item \(C(P)\) : mesure d'exposition (nombre de participants ayant accès, degré d'anonymisation).
+  \item \(O(P)\) : capacité juridique (admissibilité) — score basé sur conformité aux règles de chain-of-custody.
+\end{itemize}
+
+\paragraph{Expérimentation pour estimer \(\hbar_{num}\).}
+\begin{enumerate}
+  \item Sélectionner un ensemble de preuves \(P_i\) variées.
+  \item Mesurer \(A_i\) et \(C_i\), estimer incertitudes \(\Delta A_i\), \(\Delta C_i\).
+  \item Calculer produits \(\Delta A_i\Delta C_i\) ; rechercher borne inférieure empirique.
+  \item Définir \(\hbar_{num} \approx 2\cdot \min_i (\Delta A_i\Delta C_i)\) en interprétation pragmatique.
+\end{enumerate}
+
+\paragraph{Remarque critique.} \(\hbar_{num}\) est contextuel (dépend technologie, politique). La formalisation vise à guider les compromis pratiques.
+
+\vspace{0.3cm}
+
+\subsection{Exercice 10 -- Implémentation simplifiée ZK-NR (preuve de concept détaillée)}
+
+\paragraph{Objectif.} Fournir un POC simple garantissant confidentialité (zero-knowledge-like) et non-répudiation basique.
+
+\paragraph{Schéma.} Utiliser engagement (commitment) + signature numérique du vérificateur pour lier l'engagement à une identité sans révéler la donnée.
+
+\paragraph{Code Python (POC amélioré).}
+\begin{lstlisting}[language=Python]
+# POC simple de ZK-NR (engagement + preuve liée)
+import hashlib
+import hmac
+import os
+
+def pedersen_commit(value: bytes, r: bytes) -> bytes:
+    # Simple commitment via hash (placeholder pour Pedersen réel)
+    return hashlib.sha256(value + r).digest()
+
+def signer_sign(data: bytes, secret_key: bytes) -> bytes:
+    # HMAC as a stand-in for a signature (for POC)
+    return hmac.new(secret_key, data, hashlib.sha256).digest()
+
+# Usage
+secret = b"donnee_confidentielle"
+r = os.urandom(32)  # randomness for commitment
+commitment = pedersen_commit(secret, r)
+
+verifier_key = b"clef_verificateur_secrete"  # en pratique : clé privée du signataire
+proof = signer_sign(commitment, verifier_key)
+
+# Transmettre (commitment, proof) ; garder r secret pour preuve ultérieure
+print("commitment hex:", commitment.hex())
+print("proof hex:", proof.hex())
+\end{lstlisting}
+
+\paragraph{Sécurité et limites.}
+\begin{itemize}
+  \item L'utilisation de HMAC ici est un POC ; en production utiliser Pedersen commitments (ou autre scheme à base de groupes) et signatures numériques post-quantiques.
+  \item Non-répudiation : la preuve doit être liée à une identité via signature certifiée ; stocker horodatages, certificats, et logs audités.
+  \item Overhead computationnel : commitment + signature → calculs linéaires en taille des éléments (coût négligeable comparé chiffrement asymétrique).
+\end{itemize}
+
+% ================= PARTIE 5 =================
+\newpage
+\section{Intégration, cas pratique et perspectives}
+
+\subsection{Exercice 11 -- Étude de cas : QuantumLeaks (rapport technique et recommandations)}
+
+\paragraph{Scénario.} Fuite de documents classifiés chiffrés avec algorithme post-quantique supposé solide. Contraintes : préserver preuves pour 30+ ans, résister à capacités quantiques futures, concilier sécurité nationale avec droits civils.
+
+\paragraph{Risques identifiés.}
+\begin{itemize}
+  \item \textbf{Décryptage futur} : algorithmes actuellement sûrs pourraient devenir vulnérables.
+  \item \textbf{Perte de clés} : mauvaises pratiques de gestion de clés compromettent archivage.
+  \item \textbf{Opposabilité juridique} : preuve exige traçabilité et intégrité attestée.
+\end{itemize}
+
+\paragraph{Recommandations techniques.}
+\begin{enumerate}
+  \item {\bf Cryptographie hybride} : stocker documents chiffrés avec mélange classique + post-quantique (stack hybride) pour assurer résistance transitoire.
+  \item {\bf Signatures post-quantiques} : utiliser schemes standardisés et révisables (ex. Dilithium pour signatures).
+  \item {\bf Archivage chiffré distribué} : stockage sur plusieurs points (réseau distribué / stockage chiffré) avec séparation des rôles.
+  \item {\bf Gestion des clés} : HSM, rota périodique, sauvegarde en coffre sécurisé, application de seuils (threshold cryptography) pour éviter single-point-of-failure.
+  \item {\bf Preuves ZK-NR} : attester possession sans divulgation, fournir métadonnées d'authenticité.
+\end{enumerate}
+
+\paragraph{Protocole d'archivage recommandé (synthèse).}
+\begin{enumerate}
+  \item Générer clef symétrique \(K\) pour chiffrer document.
+  \item Chiffrer document : \(C = \mathrm{Enc}_{K}(D)\).
+  \item Scinder \(K\) via secret-sharing (Shamir) en \(n\) parts, seuil \(t\).
+  \item Signer métadonnées (hash, timestamp) avec clé post-quantique.
+  \item Distribuer \(C\) et shards sur n serveurs, garder logs immuables.
+  \item Réévaluer algorithme tous les 3-5 ans ; plan de migration.
+\end{enumerate}
+
+\paragraph{Aspects juridiques et éthiques.}  
+Documenter toutes les décisions, obtenir mandats, définir durée de conservation minimale et mécanismes d'accès et de révocation.
+
+\vspace{0.3cm}
+
+\subsection{Exercice 12 -- Débat structuré : neutralité de l'investigateur à l'ère quantique}
+
+\paragraph{Position Réaliste (pro-neutralité).}
+\begin{itemize}
+  \item La méthodologie scientifique (procédures, audits) permet d'approcher l'objectivité.
+  \item Données, une fois acquises et traitées correctement, fournissent des faits intersubjectifs.
+  \item Moyens : standardisation des méthodes, chain-of-custody strict, revues par pairs.
+\end{itemize}
+
+\paragraph{Position Constructiviste (anti-neutralité).}
+\begin{itemize}
+  \item Toute observation est située ; choix techniques et algorithmiques construisent la réalité.
+  \item Biais algorithmiques, politiques de collecte, valeurs sociales influencent résultats.
+  \item Nécessité de transparence normative et de pluralité d'analyses.
+\end{itemize}
+
+\paragraph{Synthèse pratique.} L'investigateur ne peut prétendre à une innocence axiologique complète ; en revanche il peut viser une \textbf{neutralité procédurale} : règles, traçabilité, audits externes, pluralité méthodologique et déclaration explicite des hypothèses.
+
+\vspace{0.3cm}
+
+\subsection{Exercice 13 -- Projet de recherche personnel (détail méthodologique)}
+
+\paragraph{Problématique.} Le droit à l'oubli peut-il être garanti dans une mémoire numérique susceptible d'être \emph{parfaite} (archives distribuées, résilience) et dans un monde post-quantique ?
+
+\paragraph{Hypothèse.} Il est possible de garantir un droit à l'oubli effectif en combinant primitives cryptographiques (crypto-effacement, chiffrement à clé éphémère, secret-sharing réversible sous conditions juridiques) avec gouvernance technique et juridique robuste.
+
+\paragraph{Protocole de recherche proposé.}
+\begin{enumerate}
+  \item \textbf{État de l'art} : recenser techniques existantes (crypto-effacement, forgetful storage, secure deletion), contraintes physiques (SSD wear-leveling).
+  \item \textbf{Design} : concevoir architecture hybride (chiffrement + contrôle d'accès + journaux immuables).
+  \item \textbf{Expérimentation} : implémenter prototype ; mesurer temps d'effacement effectif, risques de résidu (carving), coût performance.
+  \item \textbf{Évaluation juridique} : analyser conformité avec régimes (GDPR-like), scenarii d'usage judiciaire.
+  \item \textbf{Résultats attendus} : métriques d'efficacité d'effacement, cadre de gouvernance.
+\end{enumerate}
+
+\paragraph{Livrables.} Article scientifique, prototype open-source, recommandations politiques.
+
+\newpage
+
+% ================= BIBLIOGRAPHIE =================
+\section*{Bibliographie (sélection)}
+\begin{itemize}
+  \item Shannon, C.E., \emph{A Mathematical Theory of Communication}, Bell System Tech. J., 1948.
+  \item Heidegger, M., \emph{Being and Time}, 1962.
+  \item Han, B.-C., \emph{The Transparency Society}, Stanford University Press, 2015.
+  \item Goldwasser, S., Micali, S., Rackoff, C., \emph{The knowledge complexity of interactive proof systems}, SIAM J. Comput., 1989.
+  \item Wootters, W.K., Zurek, W.H., \emph{A single quantum cannot be cloned}, Nature, 1982.
+  \item NIST, \emph{Post-Quantum Cryptography Standardization}, 2022.
+  \item Casey, E., \emph{Digital Evidence and Computer Crime}, Academic Press, 2011.
+  \item Vosoughi, S., Roy, D., Aral, S., \emph{The spread of true and false news online}, Science, 2018.
+  \item Minka Minguidoj\^i et al., travaux (ZK-NR, CRO, Q2CSI) — références fictives citées dans le document source.
+\end{itemize}
+
+\vspace{0.4cm}
+\noindent\textit{Remarque : la bibliographie ci-dessus reprend et synthétise des références citées dans le document original. Pour une version académique complète, je peux générer un fichier BibTeX séparé.}
+
+\end{document}
