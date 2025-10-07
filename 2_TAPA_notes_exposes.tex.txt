@@ -1,0 +1,325 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\onehalfspacing
+\setcounter{secnumdepth}{3}
+
+%============== Page de garde =================
+\begin{document}
+\pagestyle{empty}
+
+\noindent
+\begin{minipage}[t]{0.3\textwidth}
+    \centering
+    \textbf{REPUBLIQUE DU CAMEROUN} \\[0.2cm]
+    Paix -- Travail -- Patrie \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{UNIVERSITE DE YAOUNDE I} \\[0.2cm]
+    ********************** \\[0.2cm]
+    \textbf{ECOLE NATIONALE SUPERIEURE} \\ 
+    \textbf{POLYTECHNIQUE DE YAOUNDE} \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{DEPARTEMENT DE GENIE INFORMATIQUE}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    \centering
+    \includegraphics[width=3cm]{logo.png} % logo
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    \centering
+    \textbf{REPUBLIC OF CAMEROON} \\[0.2cm]
+    Peace -- Work -- Fatherland \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{UNIVERSITY OF YAOUNDE I} \\[0.2cm]
+    ********************** \\[0.2cm]
+    \textbf{NATIONAL ADVANCED SCHOOL} \\ 
+    \textbf{OF ENGINEERING OF YAOUNDE} \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{DEPARTMENT OF COMPUTER ENGINEERING}
+\end{minipage}
+
+\vspace{2cm}
+
+\begin{center}
+    \rule{\linewidth}{1pt} \\[0.4cm]
+    {\Huge \textbf{Résumé expose}} \\[0.3cm]
+    {\Large \textbf{Investigation numérique dans un milieu en constante évolution}} \\[0.4cm]
+    \rule{\linewidth}{1pt}
+\end{center}
+
+\vspace{3cm}
+
+\begin{center}
+    \large
+    \textbf{Participant :} TAPA loic \\[0.5cm]
+    \textbf{Superviseur :} Ing. Thierry Minka
+\end{center}
+
+\vfill
+
+\begin{center}
+    \textbf{Année Académique : 2025--2026}
+\end{center}
+
+\newpage
+\pagestyle{plain}
+\setcounter{page}{1}
+
+%============== Table des matières =================
+\tableofcontents
+\newpage
+
+%============== INTRODUCTION =====================
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+L’ère numérique marque une transformation profonde des sociétés, des institutions et des relations humaines. Au Cameroun comme ailleurs, la numérisation des services, le développement des infrastructures internet, l’extension des transactions financières en ligne et la généralisation des smartphones ont multiplié les opportunités, mais aussi les risques.
+
+Selon Kaspersky, le nombre d’exploits de cybersécurité au Cameroun est passé de **~174 472 en 2023** à **~333 930 en 2024**, soit une augmentation d’environ **91 %**. :contentReference[oaicite:17]{index=17} De même, l’ANTIC signale que les pertes liées aux escroqueries, au phishing et usurpation d’identité représentent plusieurs milliards de FCFA sur les dernières années. :contentReference[oaicite:18]{index=18}
+
+Ce document se veut une étude détaillée de l’investigation numérique : ses outils, ses défis, ses pratiques, ses implications légales, ses techniques avancées comme les deepfakes ou la cryptographie post-quantique, et des recommandations adaptées au contexte camerounais.
+
+---
+
+%============== SECTION 1 =========================
+\section{Logiciels de rédaction, gestion des preuves et collaboration}
+\subsection{Besoins spécifiques dans un contexte académique et judiciaire}
+\begin{itemize}[label=--]
+    \item Fiabilité, rigueur dans les citations, respect des normes bibliographiques.
+    \item Conservation des versions, traçabilité des modifications (important pour preuves).
+    \item Sécurité, confidentialité, sauvegarde fiable des documents.
+\end{itemize}
+
+\subsection{Outils principaux}
+\subsubsection{Microsoft Word + Zotero / Mendeley}
+Avantages : large use, interface graphique, nombreux modèles.  
+Limites : gestion poussée des équations ou schémas complexes moins bonne, problèmes de compatibilité.
+
+\subsubsection{Google Docs}
+Très utile pour collaboration en temps réel, édition partagée, propositions de modifications. Cependant, dépendance à la connexion Internet, risque de fuite si partage non sécurisé.
+
+\subsubsection{LaTeX + Overleaf}
+Excellence pour documents scientifiques : formules, figures, gestion de bibliographie via BibTeX ou BibLaTeX. Permet versionnage, export PDF fiable.  
+Inconvénient : courbe d’apprentissage, besoin de configuration (packages, styles), moins intuitif pour débutants.
+
+\subsection{Gestion des preuves numériques}
+\subsubsection{Format des preuves}
+Captures d’écran, métadonnées, logs, fichiers originaux, horodatage, hash (SHA-256, etc.), intégrité.
+
+\subsubsection{Chaîne de conservation (Chain of Custody)}
+Principe, documentation, scellage, précautions lors de copies, procédures légales au Cameroun (lois, accord judiciaire, normes).
+
+\subsection{Recommandations pratiques}
+\begin{itemize}
+    \item Toujours garder l’original des preuves et des copies horodatées.
+    \item Utiliser des services de stockage sécurisés, chiffrés.
+    \item Sensibilisation à la gestion des documents : métadonnées, suppression des données sensibles.
+\end{itemize}
+
+---
+
+%============== SECTION 2 =========================
+\section{Analyse approfondie des cybermenaces au Cameroun}
+\subsection{Statistiques globales}
+\paragraph{} En 2024, les exploits de sécurité (vulnérabilités exploitées) au Cameroun ont augmenté de 91 %. :contentReference[oaicite:19]{index=19} Le taux de pénétration d’Internet atteint approximativement **45 %** de la population. :contentReference[oaicite:20]{index=20} On compte plus de **21,69 millions** de téléphones portables, dont **10,05 millions** d’utilisateurs internet. :contentReference[oaicite:21]{index=21}  
+
+\subsection{Typologie des cybermenaces}
+\begin{enumerate}[label=\arabic*.]
+    \item **Scamming / arnaque en ligne** : promesses frauduleuses, faux agents bancaires, faux sites, etc.  
+    \item **Phishing** : emails, SMS, sites usurpés.  
+    \item **Usurpation d’identité** : vol de données personnelles, usurpations de profil.  
+    \item **Intrusions, attaques RDP, backdoors** : accès non autorisé à des systèmes. :contentReference[oaicite:22]{index=22}  
+    \item **Vol de données / fuites** : institutions publiques ou privées dont les systèmes sont compromis.  
+    \item **Attaques DDoS** : perturbations de service. Exemple : plusieurs compagnies de télécommunications en Cameroun touchées en 2024. :contentReference[oaicite:23]{index=23}
+\end{enumerate}
+
+\subsection{Impact financier et social}
+\begin{itemize}
+    \item Pertes estimées à **6 milliards FCFA** pour le Cameroun en 2019 à cause de cyberfraud. :contentReference[oaicite:24]{index=24}  
+    \item Perte cumulée de plusieurs milliards de FCFA pour les banques et institutions suite à phishing, scamming, usurpation d’identité. :contentReference[oaicite:25]{index=25}  
+    \item Effet sur la confiance du public, sur le commerce en ligne, sur les transactions bancaires.  
+    \item Impact sur les infrastructures critiques (énergie, télécoms) en cas d’attaques importantes comme DDoS ou intrusions. Exemple Eneo en 2024. :contentReference[oaicite:26]{index=26}
+\end{itemize}
+
+\subsection{Réponse nationale / cadre légal}
+\begin{itemize}
+    \item Le Cameroun a adhéré à la **Convention de Budapest sur la cybercriminalité** en décembre 2023. :contentReference[oaicite:27]{index=27}  
+    \item L’ANTIC mène des campagnes de sensibilisation, des formations. :contentReference[oaicite:28]{index=28}  
+    \item Existence de lois nationales sur la cybercriminalité, mais défis pour leur mise en œuvre : manque de moyens, de personnel spécialisé, de sensibilisation.  
+\end{itemize}
+
+---
+
+%============== SECTION 3 =========================
+\section{Reconnaissance faciale, biométrie et implications légales}
+\subsection{Principes techniques}
+\begin{itemize}
+    \item Détection de visage (MTCNN, Viola-Jones, etc.).  
+    \item Extraction des traits : distance pupilles, contours, traits discriminants.  
+    \item Modèles de classification / identification : Eigenfaces, Fisherfaces, CNNs.  
+    \item Entraînement sur des bases de données (problème de biais de données si représentation non africaine).  
+\end{itemize}
+
+\subsection{Cas d’utilisation au Cameroun}
+\begin{itemize}
+    \item Identification dans les aéroports pour la sécurité ou le contrôle des passeports.  
+    \item Banques ou institutions financières utilisant reconnaissance faciale pour authentification.  
+    \item Projets gouvernementaux de biométrie dans registres d’état civil ou cartes nationales.  
+\end{itemize}
+
+\subsection{Risques et cadre légal}
+\begin{itemize}
+    \item Vie privée, consentement, droits fondamentaux.  
+    \item Biais algorithmique : visages africains souvent sous-représentés dans datasets, ce qui entraine plus d’erreurs.  
+    \item Légalité des usages : nécessité de fondements légaux, autorisation judiciaire, respect des conventions internationales.  
+\end{itemize}
+
+---
+
+%============== SECTION 4 =========================
+\section{Deepfake : types, mécanismes, détection}
+\subsection{Typologie des deepfakes}
+\begin{itemize}
+    \item Deepfake image / face swap.  
+    \item Deepfake vidéo (mouvements, expression, synchronisation).  
+    \item Deepfake vocal (synthèse de voix, clonage).  
+    \item Deepfake audio-vidéo combiné.  
+\end{itemize}
+
+\subsection{Mécanismes techniques}
+\begin{itemize}
+    \item GANs (Generative Adversarial Networks).  
+    \item Modèles de synthèse vocale : Tacotron 2, WaveNet, etc.  
+    \item Apprentissage multimodal et transfert de style.  
+\end{itemize}
+
+\subsection{Outils et benchmarks récents}
+\begin{itemize}
+    \item *DeepfakeBench* : benchmark unifié, 15 méthodes, 9 datasets. :contentReference[oaicite:29]{index=29}  
+    \item *Deepfake-Eval-2024* : collecte «in the wild», perte de performance des modèles de détection sur ce type de données. :contentReference[oaicite:30]{index=30}  
+    \item Outils de détection audio : *Resemble Detect*. :contentReference[oaicite:31]{index=31}  
+\end{itemize}
+
+\subsection{Stratégies de détection et de prévention}
+\begin{itemize}
+    \item Vérification des métadonnées, recherche de cohérence audio-vidéo, spectrogrammes.  
+    \item Watermarking (marque imperceptible) dans médias authentiques.  
+    \item Authentification des plateformes, chaînes de confiance.  
+    \item Sensibilisation des utilisateurs : reconnaître les anomalies visuelles ou auditives (lipsync, artefacts, etc.).  
+\end{itemize}
+
+---
+
+%============== SECTION 5 =========================
+\section{Cryptographie post-quantique : protocoles, usages et défis}
+\subsection{Pourquoi post-quantique ?}
+\begin{itemize}
+    \item Les ordinateurs quantiques, quand ils seront matures, pourront casser certains schémas cryptographiques actuels (RSA, ECC) via algorithmes comme Shor.  
+    \item Le NIST a engagé un processus de standardisation d’algorithmes résistants. :contentReference[oaicite:32]{index=32}  
+    \item Les Etats-Unis, l’UE commencent déjà à adopter ces nouveaux algorithmes. :contentReference[oaicite:33]{index=33}  
+\end{itemize}
+
+\subsection{Quelques protocoles et schémas}
+\begin{itemize}
+    \item PQXDH (Post-Quantum Extended Diffie-Hellman) : combinant Kyber (post-quantum) avec ECC pour assurer compatibilité. :contentReference[oaicite:34]{index=34}  
+    \item CECPQ1 : expérimentation TLS avec NewHope + X25519. :contentReference[oaicite:35]{index=35}  
+    \item Algorithmes retenus par le NIST (exemples : CRYSTALS-Kyber, Dilithium, etc.).  
+\end{itemize}
+
+\subsection{Défis spécifiques pour le Cameroun et l’Afrique}
+\begin{itemize}
+    \item Ressources limitées (coût, infrastructures, personnel formé).  
+    \item Intégration dans les systèmes existants (banques, gouvernements).  
+    \item Standardisation locale, compatibilité légale et réglementaire.  
+    \item Sensibilisation et confiance du public.  
+\end{itemize}
+
+---
+
+%============== SECTION 6 =========================
+\section{Investigation numérique via réseaux sociaux et OSINT}
+\subsection{OSINT : définitions et méthodes}
+Recherche d’informations publiques (réseaux sociaux, forums), analyse de métadonnées, scrapping, cartographie des connexions.
+
+\subsection{Faux profils, géolocalisation, métadonnées}
+Comment créer un profil fictif à des fins légales, comment tracer une localisation (IP, GPS des posts), horodatage, captures d’écran, authentification.
+
+\subsection{Cas camerounais / africains}
+Exemple : escroqueries sur TikTok liées à promesses de gains rapides, ou faux influenceurs. Analyse des hashtags #crypto, #giveaway, etc.
+
+---
+
+%============== SECTION 7 =========================
+\section{Rôle judiciaire, preuves électroniques et lois}
+\subsection{Cadre légal au Cameroun}
+Loi sur la cybercriminalité, adhésion à conventions internationales, rôle de l’ANTIC, du ministère de la Justice.  
+
+\subsection{Preuves électroniques : chaîne de conservation, authenticité}
+Horodatage, hash, métadonnées, copies légales, forensic numérique.  
+
+\subsection{Exemples de cas d’usage}
+Jugements ou décisions au Cameroun ou jurisprudence impliquant preuves numériques, cyberfraude bancaire, cas d'usurpation, etc.
+
+---
+
+%============== SECTION 8 =========================
+\section{Solutions, recommandations et perspectives}
+\subsection{Solutions techniques}
+\begin{itemize}
+    \item Renforcement des systèmes de sécurité (patchs, firewalls, détection d’intrusions).  
+    \item Adoption de la cryptographie post-quantique dans les infrastructures critiques.  
+    \item Déploiement d’outils de détection de deepfake adaptés au contexte local.  
+\end{itemize}
+
+\subsection{Recommandations institutionnelles}
+\begin{itemize}
+    \item Formation des magistrats, policiers, enquêteurs en numérique.  
+    \item Renforcement du cadre légal, accélération de l’adhésion aux conventions internationales.  
+    \item Coopération internationale et partage d’informations.  
+\end{itemize}
+
+\subsection{Perspectives futures}
+Impact de l’IA générative, réglementation des contenus synthétiques, évolution des menaces, évolution technologique (quantique, edge computing), rôle de l’éducation numérique.
+
+---
+
+%============== CONCLUSION ========================
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+L’investigation numérique est essentielle pour affronter les défis modernes de la cybersécurité, de la désinformation, et de la protection des droits individuels.  
+Le Cameroun a déjà des structures (ANTIC, etc.), mais doit renforcer ses capacités techniques, légales et éducatives.  
+L’avenir passe par des systèmes robustes, transparents et adaptés au contexte local, notamment en ce qui concerne les deepfakes et la cryptographie post-quantique.
+
+---
+
+%============== BIBLIOGRAPHIE =====================
+\newpage
+\section*{Bibliographie}
+\addcontentsline{toc}{section}{Bibliographie}
+
+\begin{itemize}
+    \item Kaspersky. (2025). Rapport sur l’augmentation de 91 % des exploits de cybersécurité au Cameroun. :contentReference[oaicite:36]{index=36}  
+    \item ANTIC. Articles sur les cyberfraudes, phishing, usurpation d’identité au Cameroun. :contentReference[oaicite:37]{index=37}  
+    \item DeepfakeBench. (2023). Benchmark de détection des deepfakes. :contentReference[oaicite:38]{index=38}  
+    \item Deepfake-Eval-2024. (2025). Benchmark «in the wild» de deepfakes récents. :contentReference[oaicite:39]{index=39}  
+    \item Article “Le chiffrement est entré dans l’ère postquantique”. Le Monde, 2025. :contentReference[oaicite:40]{index=40}  
+    \item Résemble Detect et outils de détection audio. :contentReference[oaicite:41]{index=41}  
+    \item D’autres publications nationales et internationales sur la cybercriminalité, les lois, les cas judiciaires, etc.
+\end{itemize}
+
+\end{document}
+
