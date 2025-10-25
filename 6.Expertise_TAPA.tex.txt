@@ -1,0 +1,269 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage[utf8]{inputenc}   
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}         
+\usepackage{geometry}         
+\usepackage{setspace}         
+\usepackage{hyperref}         
+\usepackage{fancyhdr}         
+\usepackage{enumitem}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\onehalfspacing
+
+%--- Style des en-têtes ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Rapport d’expertise en investigation numérique}
+\fancyhead[R]{\thepage}
+
+%-------------------- Document --------------------
+\begin{document}
+
+%==================== Page de garde ====================
+\begin{titlepage}
+
+\pagestyle{empty} % pas de numérotation pour la page de garde
+
+\noindent
+\begin{minipage}[t]{0.3\textwidth}
+    \centering
+    \textbf{REPUBLIQUE DU CAMEROUN} \\[0.2cm]
+    Paix -- Travail -- Patrie \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{UNIVERSITE DE YAOUNDE I} \\[0.2cm]
+    ********************** \\[0.2cm]
+    \textbf{ECOLE NATIONALE SUPERIEURE} \\ 
+    \textbf{POLYTECHNIQUE DE YAOUNDE} \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{DEPARTEMENT DE GENIE}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    \centering
+    \includegraphics[width=3cm]{logo_polytechnique.png.png} % Logo intégré ici
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    \centering
+    \textbf{REPUBLIC OF CAMEROON} \\[0.2cm]
+    Peace -- Work -- Fatherland \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{UNIVERSITY OF YAOUNDE I} \\[0.2cm]
+    ********************** \\[0.2cm]
+    \textbf{NATIONAL ADVANCED SCHOOL} \\
+    \textbf{OF ENGINEERING OF YAOUNDE} \\[0.2cm]
+    ****************** \\[0.2cm]
+    \textbf{DEPARTMENT OF COMPUTER}
+\end{minipage}
+
+\vspace{2cm}
+
+\begin{center}
+    \rule{\linewidth}{0.5pt} \\[0.4cm]
+    {\Large \textbf{Rapport professionnel d’expertise en investigation numérique judiciaire : AFFAIRE MARTINEZ ZOGO \\ 
+    — Affaire d’homicide ciblé dans un contexte politico-sécuritaire}} \\[0.4cm]
+    \rule{\linewidth}{0.5pt}
+\end{center}
+
+\vspace{2cm}
+
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+    \textbf{Expert judiciaire :} TAPA LOIC
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+    \raggedleft \textbf{Tribunal compétent :} Tribunal militaire de Yaoundé
+\end{minipage}
+
+\vspace{3cm}
+
+\begin{center}
+    \textbf{Février 2024}
+\end{center}
+
+\vfill
+
+\begin{center}
+    \textbf{Confidentiel — Usage judiciaire uniquement}
+\end{center}
+
+\end{titlepage}
+
+%==================== Table des matières ====================
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+
+%==================== Introduction ====================
+\chapter*{Introduction générale}
+\addcontentsline{toc}{chapter}{Introduction générale}
+
+Au cœur des transformations de la criminalité contemporaine, la trace numérique constitue désormais une preuve centrale dans les affaires de grande complexité.  
+Les homicides planifiés, souvent dissimulés derrière des logistiques sophistiquées, laissent aujourd’hui derrière eux un cortège de données électroniques : téléphones, messages, géolocalisations, vidéosurveillance, transactions, etc.
+
+Dans le cadre d’une enquête ouverte à la suite de la découverte du corps sans vie d’un journaliste connu pour ses dénonciations publiques, la justice militaire a ordonné une expertise en investigation numérique judiciaire.  
+L’objectif était d’éclairer les autorités sur :
+
+\begin{itemize}
+    \item les moyens électroniques utilisés pour préparer, suivre et exécuter le crime,
+    \item les réseaux de communication ayant servi à la coordination des acteurs,
+    \item et les éléments probatoires exploitables pour établir la matérialité des faits.
+\end{itemize}
+
+L’expert judiciaire désigné a conduit un travail d’analyse rigoureux, basé sur la méthodologie forensique internationale, afin de produire un rapport complet destiné à appuyer la décision de renvoi devant la juridiction compétente.
+
+%==================== Chapitre I ====================
+\chapter{Cadre juridique et institutionnel}
+
+\section{Cadre légal de l’expertise numérique au Cameroun}
+L’intervention de l’expert judiciaire en matière d’investigation numérique s’appuie sur un ensemble de textes juridiques :
+
+\begin{itemize}
+    \item \textbf{Code de procédure pénale} (articles 256 à 261) : autorise le juge d’instruction à recourir à des experts pour toute question nécessitant des compétences techniques.
+    \item \textbf{Loi n°2010/012 du 21 décembre 2010} relative à la cybersécurité et à la cybercriminalité : confère à la preuve numérique la même valeur que la preuve écrite ou matérielle.
+    \item \textbf{Loi n°2017/012 du 12 juillet 2017} portant Code de justice militaire : encadre les enquêtes impliquant des personnels militaires ou assimilés.
+    \item \textbf{Code pénal camerounais} : articles 74 à 97 sur la complicité, et 276 à 277 sur l’homicide et la torture.
+\end{itemize}
+
+\section{Mission de l’expert judiciaire}
+L’expert en investigation numérique a pour mandat :
+
+\begin{itemize}
+    \item Identifier les supports numériques pertinents
+    \item Procéder à leur extraction et analyse sans altération
+    \item Garantir la chaîne de possession (\textit{chain of custody})
+    \item Produire un rapport clair, traçable et exploitable par le juge
+\end{itemize}
+
+\section{Contexte institutionnel et collaboration inter-agences}
+L’enquête, conduite sous l’autorité du juge d’instruction militaire, a mobilisé :
+
+\begin{itemize}
+    \item La brigade de gendarmerie territoriale pour les opérations de terrain
+    \item La division technique du renseignement pour la fourniture des métadonnées
+    \item Un laboratoire de criminalistique numérique pour l’exploitation des supports saisis
+\end{itemize}
+
+%==================== Chapitre II ====================
+\chapter{Collecte et préservation des preuves numériques}
+
+\section{Identification des sources numériques}
+Les premiers actes de l’enquête ont permis d’identifier plusieurs types de supports pertinents :
+
+\begin{itemize}
+    \item Téléphones portables des suspects et de la victime
+    \item Ordinateurs portables professionnels
+    \item Terminaux GPS et appareils de communication radio
+    \item Caméras de vidéosurveillance urbaines
+    \item Enregistrements issus des opérateurs de téléphonie mobile
+\end{itemize}
+
+\section{Méthodes de saisie et d’isolation}
+\begin{itemize}
+    \item Téléphones mis sous scellés et placés  sous surveillance
+    \item Ordinateurs clonés sur le terrain à l’aide de \textbf{write-blockers}
+    \item Vidéos copiées à partir des DVR via interfaces forensiques
+\end{itemize}
+
+\section{Outils et logiciels utilisés}
+\begin{itemize}
+    \item \textbf{Cellebrite UFED 4PC} : extraction des téléphones
+    \item \textbf{FTK Imager, EnCase Forensic} : duplication bit à bit
+    \item \textbf{Autopsy 4.21} : récupération de fichiers supprimés
+    \item \textbf{DVR Examiner} : extraction vidéos de surveillance
+    \item \textbf{Wireshark} : inspection de paquets réseau
+\end{itemize}
+
+\section{Préservation et documentation (Chain of Custody)}
+Chaque support a été enregistré dans un registre de scellés numériques avec numéro unique, date, responsable et signature du greffier.
+
+%==================== Chapitre III ====================
+\chapter{Analyse technique et corrélation des données}
+
+\section{Exploitation des téléphones portables}
+\begin{itemize}
+    \item Messages indiquant surveillance préalable de la victime
+    \item Communications coordonnées le jour des faits
+    \item Fichiers multimédias : images du véhicule, croquis, plans
+\end{itemize}
+
+\section{Données de géolocalisation}
+Analyse via \textbf{ArcGIS} et \textbf{Magnet AXIOM} :
+
+\begin{itemize}
+    \item Trajets des véhicules avant et après le meurtre
+    \item Présence simultanée de plusieurs terminaux sur le lieu d’enlèvement
+    \item Corrélation avec les images vidéo
+\end{itemize}
+
+\section{Vidéosurveillance et métadonnées}
+Images extraites et authentifiées par empreinte \textbf{SHA-256}, analyse image par image avec \textbf{Amped Five} :
+
+\begin{itemize}
+    \item Reconnaissance du véhicule utilisé pour la filature
+    \item Identification des horaires exacts
+    \item Coordination temporelle avec téléphones localisés
+\end{itemize}
+
+\section{Corrélation multi-sources}
+Données centralisées dans une base chronologique normalisée :
+
+\begin{itemize}
+    \item Trame temporelle complète
+    \item Groupes d’activité synchronisés
+    \item Cartographie relationnelle entre utilisateurs
+\end{itemize}
+
+%==================== Chapitre IV ====================
+\chapter{Exploitation judiciaire des preuves numériques}
+
+\section{Analyse approfondie des communications}
+Identification des contacts, historique des appels et messages, éléments de coordination logistique. Techniques pour données cryptées.
+
+\section{Exploitation des données informatiques}
+Récupération de fichiers supprimés, identification de scripts et accès distants, analyse des logs, corrélation avec les activités de terrain.
+
+\section{Synthèse de l’exploitation judiciaire}
+Rapport précisant origine des preuves, corrélation multi-sources, conclusions pour le juge. Validation par experts indépendants.
+
+%==================== Chapitre V ====================
+\chapter{Difficultés et limites techniques}
+
+\section{Obstacles liés à l’environnement numérique}
+Cryptage des communications, suppression volontaire de fichiers, multiplicité des plateformes.
+
+\section{Contraintes légales et institutionnelles}
+Délais de réquisition, secret des correspondances, filtrage rigoureux.
+
+\section{Limites matérielles et humaines}
+Conservation limitée des vidéos, mobilisation de plusieurs experts spécialisés.
+
+%==================== Chapitre VI ====================
+\chapter{Aspects éthiques et déontologiques}
+
+\section{Respect de la légalité et de la procédure}
+Mandats judiciaires respectés, chaîne de possession strictement suivie.
+
+\section{Confidentialité et protection des données}
+Anonymisation des tiers, stockage sécurisé des copies d’analyse.
+
+\section{Neutralité et objectivité de l’expertise}
+Indépendance, conclusions basées sur éléments vérifiables, journal d’analyse détaillé.
+
+%==================== Chapitre VII ====================
+\chapter{Recommandations et conclusion}
+
+\section{Recommandations opérationnelles}
+Formation des forces et magistrats, infrastructure nationale sécurisée, coopération rapide avec opérateurs télécoms.
+
+\section{Recommandations législatives}
+Encadrement des communications cryptées, conservation des vidéos, standards uniformes d’expertise.
+
+\section{Conclusion finale}
+Démonstration de la planification du crime, fiabilité des données, admissibilité probatoire, contribution à la manifestation de la vérité judiciaire.
+
+\end{document}
